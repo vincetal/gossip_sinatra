@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand mb-0 h1" href="/">GOSSIPS!</a>
+    </nav>
+    <br>
+
+    <div class="container">
+
+      <div class="d-flex justify-content-between">
+        <h3>My gossips</h3> <br>
+        <a href="/gossip/new/"><button type="button" class="btn btn-secondary">Créer un gossip</button></a>
+      </div> <br>
+
+
+      <% gossips.each_with_index do |gossip,index| %>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= gossip.author %></h5>
+            <p class="card-text"><%= gossip.content %></p>
+            <a href="/gossips/<%= index + 1 %>/" class="card-link">Consulter</a>
+          </div>
+        </div>
+        <br>
+        <% end %>
+
+    </div>
+
+
+  </body>
+</html>
